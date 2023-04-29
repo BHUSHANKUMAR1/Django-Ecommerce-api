@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cart %}
+
+{% block title %}Contact page{% endblock title %}
+
+{% block content %}
+contact kljhjh
+<h1>ffhfhgf</h1>
+
+<div class="bg-warning-subtle p-2 g-col-6">
+    <div class="row  " style="padding-left: 110px;">
+        {% for i in cat %}
+        <div class="container col ">
+            <a href="?category_id={{i.id}}">
+              <img class='cardd' src=" {{i.cat_image.url}} " alt="aaa" width = 80 height = 80>
+            </a>
+            <h6>{{i.name}}</h6>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% comment %} <div class="main text-center">
+    <div class="row " style="padding-left: 30px;">
+        {% for i in cat %}
+        <div class=" col  two">
+            <a href="?category_id={{i.id}}">
+              <img class='cardd ' src=" {{i.cat_image.url}} " alt="aaa" width = 220 height = 160 >
+            </a>
+            <div class="price">
+                <h6>{{i.name}}</h6>
+            <h5>Rs. 45454</h5>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div> {% endcomment %}
+
+<div class="main text-center my-5">
+    <div class="three"></div>
+    <div class="container">
+
+		<img class="control prev" src="{% static 'images/l.png' %}">
+		<div class="slider">
+            {% for i in cat %}
+            <div class="col two">
+                <img class='cardd ' src=" {{i.cat_image.url}} " alt="aaa" width = 220 height = 160 >
+            <div class="price">
+                <h6>{{i.name}}</h6>
+            <h5>Rs. {{i.start}}</h5>
+            </div>
+            </div>
+            {% endfor %}
+
+
+            {% for i in cat %}
+            <div class="col two">
+                <img class='cardd ' src=" {{i.cat_image.url}} " alt="aaa" width = 220 height = 160 >
+            <div class="price">
+                <h6>{{i.name}}</h6>
+            <h5>Rs. {{i.start}}</h5>
+            </div>
+            </div>
+            {% endfor %}
+		</div>
+		<img class="control next" src="{% static 'images/r.png' %}">
+	</div>
+</div>
+
+    <div class="main">
+    <div class="one"></div>
+    <div class="two"></div>
+    </div>
+
+
+
+{% endblock content %}

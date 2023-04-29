@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load cart %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+<div class="container my-3">
+    <table class="table table-dark table-striped-columns my-3  text-center">
+    <tr>
+        <th>s.no</th>
+        <th>Date</th>
+        <th>name</th>
+        <th>image</th>
+        <th>quantity</th>
+        <th>price</th>
+        <th>total price</th>
+    </tr>
+  {% for i in fetch_order %}
+  <tr>
+    <td class="align-middle">{{forloop.counter}}</td>
+    <td class="align-middle">{{i.date}}</td>
+    <td class="align-middle">{{i.product.pro_name}}</td>
+    <td class="align-middle"><img src="{{i.product.pro_image.url}}" alt="" width = 100></td>
+    <td class="align-middle">{{i.quantity}}</td>
+    <td class="align-middle">Rs. {{i.price}}</td>
+    <td class="align-middle">Rs. {{i.price|prod_price:i.quantity}}</td>
+  </tr>
+ 
+  
+  {% endfor %}
+   
+</table>
+</div>
+
+
+
+{% endblock content %}
